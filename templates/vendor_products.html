@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor products</title>
+    <link rel="stylesheet" href="../static/css/vendor_products.css">
+</head>
+<body>
+    <div class="grid">
+        <main class="page-content">
+            {% for record in data %}
+            <div class="card" style="background-image: url(../static/images/{{record[8]}});background-repeat: no-repeat;background-size: cover;width: 290px;align-items: center;" >
+
+                <div class="content">
+                    <div class="row">
+
+               
+                    <h2 class="title">{{record[2]}}</h2>
+                    <p class="copy">{{record[3]}}</p>
+                    <p class="copy" < span style="color:red ;">Cost</span>{{record[5]}}</p>
+                    <p class="copy" < span style="color:red ;">Discount</span>{{record[6]}}</p>
+                   <!-- <button class="btn">Buy Now</button> -->
+                   <a class="btn " style="text-decoration: none; background-color: red;" href="/delete/{{record[1]}}">Delete</a>
+                </div>
+                 
+                </div>
+               
+            </div>
+            {% endfor %}
+        
+        </main>
+        
+        </div>
+
+        <!-- toiletries category -->
+        <br><br>
+        <div class="grid">
+            <main class="page-content">
+                {% for record in toiletries %}
+                <div class="card"
+                    style="background-image: url(../static/images/{{record[8]}});background-repeat: no-repeat;background-size: cover;width: 290px;align-items: center;">
+        
+                    <div class="content">
+                        <div class="row">
+        
+        
+                            <h2 class="title">{{record[2]}}</h2>
+                            <p class="copy">{{record[3]}}</p>
+                            <p class="copy" < span style="color:red ;">Cost</span>{{record[5]}}</p>
+                            <p class="copy" < span style="color:red ;">Discount</span>{{record[6]}}</p>
+                            <!-- <button class="btn">Buy Now</button> -->
+                            <a class="btn " style="text-decoration: none; background-color: red;"
+                                href="/delete/{{record[1]}}">Delete</a>
+                        </div>
+        
+                    </div>
+        
+                </div>
+                {% endfor %}
+        
+            </main>
+        
+        </div>
+
+
+       
+       
+   
+</body>
+</html>

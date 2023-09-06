@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="../static/index.js"></script>
+    <style>
+        .header{
+            padding: 15px;
+            background-color: black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="header container-fluid">
+    <div class="company-logo">D</div>
+    <nav class="navbar">
+        <ul class="nav-items">
+            <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">OFFER</a></li>
+            <li class="nav-item"><a href="/getproducts" class="nav-link">SHOP</a></li>
+            {% if session['user']%}
+            <i style="font-size: 20px;  color: aliceblue;">{{session['user']}}</i>
+            <li class="nav-item"><a href="/logout/user" class="nav-link">LOGOUT</a></li>
+            {%else%}
+    
+            <li class="nav-item"><a href="/login" class="nav-link">LOGIN</a></li>
+    
+            <li class="nav-item"><a href="/register" class="nav-link">SIGNUP</a></li>
+            {%endif%}
+    
+    
+        </ul>
+    </nav>
+    <div class="menu-toggle">
+        <i class="bx bx-menu"></i>
+        <i class="bx bx-x"></i>
+    </div>
+</div>
+</body>
+</html>

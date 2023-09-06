@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/vendor_products.css">
+    <script src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+    {% include 'navbar.html'%}
+    <div class="grid">
+        <i class="mx-auto text-success ">Electronics category</i>
+        <main class="page-content">
+            {% for record in data %}
+            <div class="card"
+                style="background-image: url(../static/images/{{record[8]}});background-repeat: no-repeat;background-size: cover;width: 290px;align-items: center;">
+    
+                <div class="content">
+                    <div class="row">
+    
+    
+                        <h2 class="title">{{record[2]}}</h2>
+                        <p class="copy">{{record[3]}}</p>
+                        <p class="copy" < span style="color:red ;">Cost</span>{{record[4]}}</p>
+                        <p class="copy" < span style="color:red ;">Discount</span>{{record[5]}}</p>
+                        <!-- <button class="btn">Buy Now</button> -->
+                        <a class="btn " style="text-decoration: none; background-color: red;"
+                            href="/single_item/{{record[0]}}">Buy now</a>
+                    </div>
+    
+                </div>
+    
+            </div>
+            {% endfor %}
+    
+        </main>
+    
+    </div>
+
+    <br><br>
+    <div class="grid">
+        <i class="mx-auto text-success  " style="padding:20px ; background-color: burlywood;">Toiletries category</i>
+        <main class="page-content">
+            {% for record in toiletries %}
+            <div class="card"
+                style="background-image: url(../static/images/{{record[8]}});background-repeat: no-repeat;background-size: cover;width: 290px;align-items: center;">
+    
+                <div class="content">
+                    <div class="row">
+    
+    
+                        <h2 class="title">{{record[2]}}</h2>
+                        <p class="copy">{{record[3]}}</p>
+                        <p class="copy" < span style="color:red ;">Cost</span>{{record[4]}}</p>
+                        <p class="copy" < span style="color:red ;">Discount</span>{{record[5]}}</p>
+                        <!-- <button class="btn">Buy Now</button> -->
+                        <a class="btn " style="text-decoration: none; background-color: red;"
+                            href="/single_item/{{record[0]}}">Delete</a>
+                    </div>
+    
+                </div>
+    
+            </div>
+            {% endfor %}
+    
+        </main>
+    
+    </div>
+
+   
+            
+                
+    
+    
+       
+    <!-- <section class="row">
+        {% for product in data %}
+        <div class="col-md-3">
+            <div class="card shadow">
+                <img src="../static/images/{{product[8]}}" class="img-fluid" style="height: 150px;" alt="">
+                <div class="card-body">
+                    <i>Vendor Id: <span class="text-primary">{{product[1]}}</span></i>
+                    <h3 class="card-title">{{product[2]}}</h3>
+                    <p>Cost: <i class="text-success">{{product[4]}}</i></p>
+                    <p>discount <i class="tetx-warning">{{product[5]}}</i></p>
+                    <a href="/single_item" class="btn btn-info btn-lg">Buy</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section> -->
+</body>
+</html>

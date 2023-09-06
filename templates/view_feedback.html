@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View feedback</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>feedback_id</th>
+            <th>feedback_desc</th>
+            <th>feedback_date</th>
+        </tr>
+        <tr>
+            <td>{{session['feedback_id']}}</td>
+            <td>{{session['feedback_desc']}}</td>
+            <td>{{session['feedback_date']}}</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
